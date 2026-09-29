@@ -517,7 +517,7 @@ CLASS lhc_zr_sd_col IMPLEMENTATION.
     " 1. Read the necessary state fields from the buffer/database
     READ ENTITIES OF zr_spacef IN LOCAL MODE
       ENTITY zr_sd_col
-        FIELDS ( ExchangeStatus )
+        FIELDS ( ExchangeStatus Isforsale )
         WITH CORRESPONDING #( keys )
       RESULT DATA(lt_stardust)
       FAILED DATA(lt_failed).
@@ -531,7 +531,7 @@ CLASS lhc_zr_sd_col IMPLEMENTATION.
         " Map custom entity actions
         %features-%action-offerForSale     = COND #( WHEN <ls_stardust>-ExchangeStatus = 'PENDING'
                                                        OR <ls_stardust>-ExchangeStatus = 'INC_OFFER'
-                                                       OR <ls_stardust>-isforsale = abap_false
+                                                       OR <ls_stardust>-isforsale = abap_true
                                                      THEN if_abap_behv=>fc-o-disabled
                                                      ELSE if_abap_behv=>fc-o-enabled )
 

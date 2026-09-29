@@ -24,6 +24,7 @@ define behavior for zc_sd_col //alias <alias_name>
   use delete;
 
   use action offerForSale;
+  use action removeFromSale;
   use action buyStardust;
   use action exchangeStardust;
   use action acceptExchange;
