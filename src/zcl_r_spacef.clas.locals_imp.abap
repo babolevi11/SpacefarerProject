@@ -536,6 +536,7 @@ CLASS lhc_zr_sd_col IMPLEMENTATION.
                                                      ELSE if_abap_behv=>fc-o-enabled )
 
         %features-%action-buyStardust     = COND #( WHEN <ls_stardust>-ExchangeStatus = 'PENDING' OR <ls_stardust>-ExchangeStatus = 'INC_OFFER'
+                                                      OR <ls_stardust>-isforsale = abap_false
                                                      THEN if_abap_behv=>fc-o-disabled
                                                      ELSE if_abap_behv=>fc-o-enabled )
 
