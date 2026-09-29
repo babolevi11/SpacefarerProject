@@ -1,0 +1,8 @@
+@EndUserText.label: 'Authorization for Spacesuit color view'
+@MappingRole: true
+define role ZC_PLANET_SUITCOLOR_AUTH {
+    grant
+        select
+            on
+                ZC_PLANET_SUITCOLOR;
+}

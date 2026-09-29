@@ -1,8 +1,5 @@
 @EndUserText.label: 'Authorization for Stardust Ledger'
 @MappingRole: true
 define role ZR_STARDUST_LEDGER_AUTH {
-    grant select on ZR_STARDUST_LEDGER;
-//                    where
-//                        entity_element_1 = 'literal_value'
-//                        or entity_element_2 = aspect user;                       
+    grant select on ZR_STARDUST_LEDGER;                 
 }

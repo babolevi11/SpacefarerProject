@@ -1,0 +1,8 @@
+@EndUserText.label: 'Authorization for Walth aggregation'
+@MappingRole: true
+define role ZC_WEALT_AGG_AUTH {
+    grant
+        select
+            on
+                ZC_WEALT_AGG;
+}
