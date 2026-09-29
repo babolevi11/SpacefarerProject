@@ -1,0 +1,94 @@
+managed implementation in class zcl_r_spacef unique;
+strict ( 2 );
+with draft;
+
+define behavior for zr_spacef
+persistent table zbl0923_t_spacef
+draft table zbl_spacef_d
+with additional save
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+{
+  create ( authorization : global );
+  update;
+  delete ( precheck );
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+
+  draft determine action Prepare
+  {
+    validation validateSkillAndReputation;
+  }
+
+  field ( readonly, numbering : managed ) SpacefarerId;
+  field ( readonly : update ) SpacefarerName;
+  field ( readonly ) SpacesuitColor;
+  field ( mandatory ) Reputation;
+
+  determination determineSuitColor on modify { create; field OriginPlanet; }
+
+  validation validateSkillAndReputation on save { create; field NavigationSkill, Reputation; }
+
+  //  static action offerForSale parameter ZA_OFFER_PRICE_RESULT result [1] $self;
+  //  static action buyStardust result [1] $self;
+  //  static action exchangeStardust parameter ZA_ExchangeTarget result [1] $self;
+
+  association _SpacedustCollection { create; with draft; }
+
+  mapping for zbl0923_t_spacef
+    {
+      SpacefarerId    = spacefarer_id;
+      SpacefarerName  = spacefarer_name;
+      NavigationSkill = navigation_skill;
+      Reputation      = reputation;
+      OriginPlanet    = origin_planet;
+      SpacesuitColor  = spacesuit_color;
+      Credits         = credits;
+      LastChangedAt   = last_changed_at;
+    }
+}
+
+define behavior for zr_sd_col
+persistent table zbl0923_t_sd_col
+draft table zbl_sd_col_d
+lock dependent by _Spacefarer
+authorization dependent by _Spacefarer
+{
+//  update ( features : instance );
+//  delete ( features : instance );
+  update;
+  delete;
+
+  field ( readonly, numbering : managed ) ItemId;
+  field ( readonly ) SpacefarerId, SpacefarerName, IsForSale, Value, ExchangeStatus, OfferedToId, OfferedToName, OfferedInExchangedFor;
+
+  action ( features : instance ) offerForSale parameter za_offer_price_result result [1] $self;
+  action ( features : instance ) buyStardust parameter za_buyer_param result [1] $self;
+  action ( features : instance ) exchangeStardust parameter za_exchange_target result [1] $self;
+  action ( features : instance ) acceptExchange parameter za_accept_reject_offer result [1] $self;
+  action ( features : instance ) removeFromSale result [1] $self;
+
+
+  association _Spacefarer { with draft; }
+//  association _TradeLedger { create; with draft; }
+
+  mapping for zbl0923_t_sd_col
+    {
+      ItemId                = item_id;
+      SpacefarerId          = spacefarer_id;
+      StateOfMatter         = state_of_matter;
+      ColorOfDust           = color_of_dust;
+      Weight                = weight;
+      WeightUnit            = weight_unit;
+      Value                 = value;
+      IsForSale             = is_for_sale;
+      ExchangeStatus        = exchange_status;
+      OfferedToId           = offered_to_id;
+      OfferedToName         = offered_to_name;
+      OfferedInExchangedFor = offered_in_exch_for;
+    }
+}

@@ -1,0 +1,117 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: {
+  typeName: 'Stardust Collection Item',
+  typeNamePlural: 'Stardust Collection Items',
+  title: { type: #STANDARD, value: 'ItemId' }
+}
+annotate view ZC_SD_COL with
+{
+  @UI.identification: [
+    {
+      type: #FOR_ACTION,            // Specifies that this is a custom action button
+      dataAction: 'offerForSale',   // Must exactly match the action name in your BDEF
+      label: 'Offer For Sale',      // The actual text displayed on the screen button
+      position: 10
+    },
+    {
+      type: #FOR_ACTION,            
+      dataAction: 'removeFromSale',
+      label: 'Remove from Sale',      
+      position: 10
+    },
+    {
+      type: #FOR_ACTION,            // Specifies that this is a custom action button
+      dataAction: 'buyStardust',   // Must exactly match the action name in your BDEF
+      label: 'Buy Stardust',      // The actual text displayed on the screen button
+      position: 10
+    },
+    {
+      type: #FOR_ACTION,            // Specifies that this is a custom action button
+      dataAction: 'exchangeStardust',   // Must exactly match the action name in your BDEF
+      label: 'Offer Exchange',      // The actual text displayed on the screen button
+      position: 10
+    },
+    {
+      type: #FOR_ACTION,            
+      dataAction: 'acceptExchange',   // <--- 2. Button on Details Page
+      label: 'Accept/Refuse Exchange',      
+      position: 40
+    }
+  ]
+  @UI.facet: [
+  { id: 'StardustGeneralInfo',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Stardust Collection Details',
+    position: 10 }
+  ]
+  @UI.hidden: true
+  ItemId;
+  // @UI.lineItem: [ { position: 15 } ]
+  // @UI.identification: [ { position: 15 } ]
+  // @EndUserText.label: 'Spacefarer ID'
+  @UI.hidden: true
+  SpacefarerId;
+  @UI.lineItem: [ 
+    { position: 10 },
+    { type: #FOR_ACTION, dataAction: 'offerForSale', label: 'Offer ForSale', position: 10 },
+    { type: #FOR_ACTION, dataAction: 'removeFromSale', label: 'Remove from Sale', position: 10 },
+    { type: #FOR_ACTION, dataAction: 'buyStardust', label: 'Buy Stardust', position: 10 },
+    { type: #FOR_ACTION, dataAction: 'exchangeStardust', label: 'Offer Exchange', position: 10 },
+    { type: #FOR_ACTION, dataAction: 'acceptExchange', label: 'Accept/Refuse Exchange', position: 40 }
+   ]
+  @UI.identification: [ { position: 10 } ]
+  @EndUserText.label: 'Spacefarer Name'
+  SpacefarerName;
+  @Consumption.valueHelpDefinition: [{
+  entity: {
+    name: 'ZI_STATE_OF_MATTER_VH', // <-- Points to your new custom helper view
+    element: 'StateOfMatterCode'
+  }
+  }]
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.identification: [ { position: 60 } ]
+  @EndUserText.label: 'State of Matter'
+  StateOfMatter;
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'ZI_DUST_COLOR_VH',
+      element: 'DustColor'
+    }
+  }]
+  @UI.lineItem: [ { position: 70 } ]
+  @UI.identification: [ { position: 70 } ]
+  @EndUserText.label: 'Stardust Color'
+  ColorOfDust;
+  //@Semantics.quantity.unitOfMeasure : 'WeightUnit'
+  @UI.lineItem: [ { position: 75 } ]
+  @UI.identification: [ { position: 75 } ]
+  @EndUserText.label: 'Stardust weight'
+  Weight;
+  //  @UI.lineItem: [ { position: 80 } ]
+  //  @UI.identification: [ { position: 80 } ]
+  //  @EndUserText.label: 'Stardust weight usnit'
+  @UI.hidden: true
+  WeightUnit;
+  @UI.lineItem: [ { position: 82 } ]
+  @UI.identification: [ { position: 82 } ]
+  @EndUserText.label: 'Stardust value'
+  Value;
+  @UI.lineItem: [ { position: 87 } ]
+  @UI.identification: [ { position: 87 } ]
+  @EndUserText.label: 'Is for Sale'
+  IsForSale;
+  @UI.lineItem: [ { position: 89 } ]
+  @UI.identification: [ { position: 89 } ]
+  @EndUserText.label: 'Exchange Status'
+  ExchangeStatus;
+  @UI.lineItem: [ { position: 95 } ]
+  @UI.identification: [ { position: 95 } ]
+  @EndUserText.label: 'Offered To'
+  OfferedToName;
+  @UI.lineItem: [ { position: 100 } ]
+  @UI.identification: [ { position: 100 } ]
+  @EndUserText.label: 'Offered In exchange for'
+  OfferedInExchangedFor;
+}

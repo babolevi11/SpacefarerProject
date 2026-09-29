@@ -1,0 +1,44 @@
+@Metadata.layer: #CUSTOMER
+@EndUserText.label: 'Metadata Extension for Stardust Ledger'
+
+annotate view ZC_STARDUST_LEDGER with
+{
+  @UI.facet: [
+  { id:            'TradeLedgerSection',
+    purpose:       #STANDARD,
+    type:          #IDENTIFICATION_REFERENCE,
+    label:         'Transaction History Ledger',
+    position:      10
+  }
+  ]
+  
+  @UI.hidden: true
+  TransactionId;
+
+  @UI.hidden: true
+  StardustId;
+  
+  @UI.hidden: true
+  FromSpacefarerId;
+  
+  @UI.lineItem: [ { position: 10, label: 'From Spacefarer Name', importance: #HIGH } ]
+  FromSpacefarerName;
+  
+  @UI.hidden: true
+  ToSpacefarerId;
+  
+  @UI.lineItem: [ { position: 20, label: 'To Spacefarer Name', importance: #HIGH } ]
+  ToSpacefarerName;
+
+  @UI.lineItem: [ { position: 30, label: 'Trade Classification', importance: #MEDIUM } ]
+  TradeType;
+
+  @UI.lineItem: [ { position: 40, label: 'Price Paid (Credits)', importance: #HIGH } ]
+  PriceInCredits;
+  
+  @UI.lineItem: [ { position: 50, label: 'Exchange Type', importance: #MEDIUM } ]
+  ExchangeType;
+
+  @UI.lineItem: [ { position: 60, label: 'Handover Timestamp', importance: #MEDIUM } ]
+  CreatedAt;
+}

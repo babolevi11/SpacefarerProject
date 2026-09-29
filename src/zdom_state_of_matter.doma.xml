@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZDOM_STATE_OF_MATTER</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000010</LENG>
+    <OUTPUTLEN>000010</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>State of Matter of Stardust</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <DOMNAME>ZDOM_STATE_OF_MATTER</DOMNAME>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>SOLID</DOMVALUE_L>
+     <DDTEXT>Microscopic, jagged shards of cosmic soot, crystal diamod</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDOM_STATE_OF_MATTER</DOMNAME>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>GAS</DOMVALUE_L>
+     <DDTEXT>Invisible or faintly glowing mist</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDOM_STATE_OF_MATTER</DOMNAME>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>PLASMA</DOMVALUE_L>
+     <DDTEXT>Crackling, neon-bright tendrils of electric energy,superheat</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

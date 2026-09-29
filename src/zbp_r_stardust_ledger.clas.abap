@@ -1,0 +1,5 @@
+CLASS zbp_r_stardust_ledger DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_stardust_ledger.
+ENDCLASS.
+
+CLASS zbp_r_stardust_ledger IMPLEMENTATION.
+ENDCLASS.

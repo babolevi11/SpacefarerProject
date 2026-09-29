@@ -1,0 +1,5 @@
+@EndUserText.label: 'Authorization for Spacefarer'
+@MappingRole: true
+define role ZR_SPACEF_AUTH {
+    grant select on ZR_SPACEF;
+}

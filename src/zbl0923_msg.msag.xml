@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZBL0923_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message Class for Spacefarer project</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Cannot delete Spacefarer &amp;1, Spacedust Collection is not empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>The combined sum of Navigation Skill and Reputation cannot reach 99.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Reputation be lower than 0.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>You already own the requested item!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>The requested Stardust item does not exist.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>The requested item is currently locked in another trade.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>The market value registry requires an asking price greater than 0 credits</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Item is not present in the database</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Item not available for Exchange.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZBL0923_MSG</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Can&apos;t exchange items with your self.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

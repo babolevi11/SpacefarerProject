@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service definition for Spacefarer'
+define service ZUI_SPACEF {
+  expose ZC_SPACEF;
+  expose ZC_SD_COL;
+  expose ZC_PLANET_SUITCOLOR;
+  expose ZC_WEALT_AGG        as WealthAnalysis;
+  expose ZC_STARDUST_LEDGER  as TradeLedger;
+}

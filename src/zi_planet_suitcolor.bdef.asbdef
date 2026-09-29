@@ -1,0 +1,30 @@
+managed implementation in class zbp_i_planet_suitcolor unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_PLANET_SUITCOLOR //alias <alias_name>
+persistent table zbl0923_t_pltcol
+draft table zbl_pltcol_d
+lock master
+total etag LastChangedAt
+authorization master ( none )
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create, readonly : update ) Planet;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zbl0923_t_pltcol
+  {
+    Planet    = planet;
+    SuitColor = suit_color;
+    LastChangedAt = last_changed_at;
+  }
+}

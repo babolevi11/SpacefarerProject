@@ -1,0 +1,5 @@
+@EndUserText.label: 'Authorization for Stardust Collection'
+@MappingRole: true
+define role ZR_SD_COL_AUTH {
+    grant select on ZR_SD_COL;              
+}

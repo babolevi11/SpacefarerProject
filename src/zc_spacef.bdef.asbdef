@@ -1,0 +1,34 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for zc_spacef //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _SpacedustCollection { create; with draft; }
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+}
+
+define behavior for zc_sd_col //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use action offerForSale;
+  use action buyStardust;
+  use action exchangeStardust;
+  use action acceptExchange;
+
+  field ( readonly ) WeightUnit;
+
+  use association _Spacefarer { with draft; }
+}

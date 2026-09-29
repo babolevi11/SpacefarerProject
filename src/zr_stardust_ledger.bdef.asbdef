@@ -1,0 +1,44 @@
+managed implementation in class zbp_r_stardust_ledger unique;
+strict ( 2 );
+//with draft;
+
+define behavior for ZR_STARDUST_LEDGER //alias <alias_name>
+persistent table zbl0923_t_tr_gl
+//draft table zbl_stardust_l_d
+lock master
+//total etag LastChangedAt
+//authorization master ( none )
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create ( authorization : global );
+//  update;
+//  delete;
+//
+//  draft action Edit;
+//  draft action Activate optimized;
+//  draft action Discard;
+//  draft action Resume;
+//
+//  draft determine action Prepare { }
+
+  field ( readonly, numbering : managed ) TransactionId;
+
+  mapping for zbl0923_t_tr_gl {
+   TransactionId = transaction_id;
+   StardustId = stardust_id;
+   FromSpacefarerId = from_spacefarer_id;
+   FromSpacefarerName = from_spacefarer_name;
+   StateOfMatter = state_of_matter;
+   ColorOfDust = color_of_dust;
+   Weight = weight;
+   WeightUnit = weight_unit;
+   ToSpacefarerId = to_spacefarer_id;
+   ToSpacefarerName = to_spacefarer_name;
+   TradeType = trade_type;
+   PriceInCredits = price_in_credits;
+   ExchangeType = exchange_type;
+   CreatedAt = created_at;
+   LastChangedAt = last_changed_at;
+  }
+}
